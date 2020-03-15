@@ -7,3 +7,9 @@ def linear_cost(X, y, theta, lambd):
     theta = lambd * (theta ** 2)#
     return (theta.sum() + sq.sum()) / (2 * m)#
     #return sq.sum() / (2 * m)
+
+def linear_costNoReg(X, y, theta):
+    m, _ = X.shape
+    h = np.matmul(X, theta)
+    sq = (y - h) ** 2
+    return sq.sum() / (2 * m)
